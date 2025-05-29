@@ -1,0 +1,12 @@
+{% extends "portfolio/base.html" %}
+
+{% block title %}Testimonials{% endblock %}
+
+{% block content %}
+<h2>what Clients say</h2>
+<ul>
+    {% for name, testimonial in testimonials.items %}
+        <li><strong>{{ name }}:</strong> "{{ testimonial }}"</li>
+    {% endfor %}
+</ul>
+{% endblock %}

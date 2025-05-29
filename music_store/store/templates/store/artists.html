@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist Listing</title>
+</head>
+<body>
+    <h1>Artist Listing</h1>
+    <ul>
+        {% for artist in artists %}
+            <li>{{ artist.name }} (Debut: {{ artist.debut_year }})</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'home' %}">Back to Home</a>
+    
+</body>
+</html>

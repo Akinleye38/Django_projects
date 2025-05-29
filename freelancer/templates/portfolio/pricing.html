@@ -1,0 +1,16 @@
+{% extends "portfolio/base.html" %}
+
+{% block title %}Pricing{% endblock %}
+
+{% block content %}
+<h2>Pricing</h2>
+<table>
+    <tr><th>Service</th><th>Price</th></tr>
+    {% for service, price in pricing.items %}
+        <tr>
+            <td>{{ service }}</td>
+            <td>{{ price }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock %}
