@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ artist.name }} - Artist Details </title>
+</head>
+<body>
+    <h1>{{ artist.name }}</h1>
+    <p>Debut Year: {{ artist.debut_year }}</p>
+    {% if artist.picture %}
+        <img src='{{ artist.picture.url }}' alt='{{ artist.name }}'>
+    {% else %}
+        <p>No image available</p>
+    {% endif %}
+    
+</body>
+</html>
+

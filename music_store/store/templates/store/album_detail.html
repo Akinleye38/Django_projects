@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ artist.name }} - Artist Details </title>
+</head>
+<body>
+    <h1>{{ album.name }}</h1>
+    <p>Artist: {{ album.artist.name }}</p>
+    <p>Release Date: {{ album.release_date }}</p>
+    {% if album.cover_photo %}
+        <img src='{{ album.cover_photo.url }}' alt='{{ album.title }}'>
+    {% else %}
+        <p>No cover image available</p>
+    {% endif %}
+    
+</body>
+</html>
+
+
+
+
+
