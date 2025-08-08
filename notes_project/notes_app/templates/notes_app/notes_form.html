@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Note Form</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'notes_app/style.css' %}">
+</head>
+<body>
+    <h1>{{ form.instance.pk|yesno:"Edit Note,Create Note" }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'notes_list' %}">Back to Notes</a>
+</body>
+</html>

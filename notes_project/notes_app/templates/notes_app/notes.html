@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Notes</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'notes_app/style.css' %}">
+</head>
+<body>
+    <h1>All Notes</h1>
+    <a href="{% url 'create_note' %}">Create New Note</a>
+
+    <h3>Filter by Category:</h3>
+    <a href="?">All</a>
+    <a href="?category=Work">Work</a> |
+    <a href="?category=Personal">Personal</a> |
+    <a href="?category=Ideas">Ideas</a> |
+
+    <ul>
+        {% for note in notes %}
+            <li>
+                <strong>{{ note.title }}</strong> 
+                {{ note.category }} |
+                {{ note.date_created|date:"Y-m-d H:i" }}
+                <a href="{% url 'edit_note' note.pk %}">Edit</a>
+                <a href="{% url 'delete_note' note.pk %}">Delete</a>
+            </li>
+        {% empty %}
+            <li>No notes available</li>
+        {% endfor %}
+    </ul>    
+</body>
+</html>
