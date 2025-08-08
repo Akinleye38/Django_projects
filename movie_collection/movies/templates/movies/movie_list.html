@@ -1,0 +1,11 @@
+<h1>Movie List</h1>
+<a href="{% url 'movie_create' %}">Create Movie</a>
+<ul>
+    {% for movie in movies %}
+        <li>
+            <a href="{% url 'movie_detail' movie.pk %}">{{ movie.title }}</a>
+        </li>
+    {% empty %}
+        <li>No movie found.</li>
+    {% endfor %}
+</ul>
